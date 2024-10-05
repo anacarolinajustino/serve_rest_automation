@@ -1,5 +1,3 @@
-# carrinho.py
-
 import requests
 from produtos.produtos import listar_todos_produtos
 

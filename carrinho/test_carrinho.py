@@ -1,5 +1,3 @@
-# test_carrinho.py
-
 import unittest
 from carrinho.carrinho import Carrinho
 

@@ -1,5 +1,3 @@
-# test_produtos.py
-
 import unittest
 import uuid
 from config import EMAIL, PASSWORD
@@ -41,14 +39,14 @@ class TestProdutos(unittest.TestCase):
 
         response_check = listar_produto_por_id(self.produto_id)
         print("Check Deleted Product Response:", response_check.json())
-        self.assertEqual(response_check.status_code, 404)  # O produto não deve ser encontrado
+        self.assertEqual(response_check.status_code, 404)  
 
     def test_listar_todos_produtos(self):
         response = listar_todos_produtos()
         print("List All Products Response:", response.json())
         
         self.assertEqual(response.status_code, 200)
-        self.assertNotIn(self.nome, [produto['nome'] for produto in response.json().get("produtos", [])])  # Verifica se o produto excluído não está na lista
+        self.assertNotIn(self.nome, [produto['nome'] for produto in response.json().get("produtos", [])])
 
 if __name__ == "__main__":
     unittest.main()
